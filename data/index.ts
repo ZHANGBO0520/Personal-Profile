@@ -33,7 +33,56 @@ export const aboutPage = {
   title: 'Liu',
   description: '无限进步',
   aboutMe:
-    "Hello ~ \n我是小刘，在北京读研究生，学习各种计算机知识ing \n同时也是一名健身爱好者💪",
+    "Hello ~ \
+我是小刘，在北京读研究生，学习各种计算机知识ing \
+同时也是一名健身爱好者💪",
+}
+
+export const academicPage = {
+  title: 'Academic Work',
+  description: 'Research and coursework across sustainable marketing, consumer insight, strategy, and financial decision-making.',
+  summary:
+    'My academic work focuses on how consumer psychology, data analysis, and market context shape business decisions. The selected projects below show my experience in quantitative research, sustainable marketing, digital transformation, and managerial analysis.',
+  highlights: [
+    'Sustainable marketing and green consumer behaviour',
+    'Questionnaire design, regression analysis, and mediation testing',
+    'Consumer segmentation and evidence-based marketing strategy',
+    'Digital transformation, platform innovation, and financial analysis',
+  ],
+  works: [
+    {
+      title: 'Visual Green Labels and Consumer Purchase Intention',
+      type: 'Master dissertation',
+      period: '2025',
+      description:
+        'An experiment-based quantitative study on how visual green labels influence food and beverage purchase intention through perceived environmental friendliness, label credibility, and brand trust.',
+      tags: ['Sustainable marketing', 'Consumer behaviour', 'TPB', 'ELM', 'Quantitative analysis'],
+    },
+    {
+      title: 'LEGO Digital Transformation: Blue Ocean Strategy and Platform Innovation',
+      type: 'Group research project',
+      period: '2024',
+      description:
+        'A strategic and financial analysis of LEGO digital transformation, covering product innovation, platform channels, user interaction, and business performance.',
+      tags: ['Digital transformation', 'Blue Ocean Strategy', 'Platform strategy', 'Financial analysis'],
+    },
+    {
+      title: 'Shop Thursdays: Beyond Budgeting and Online Channel Transition',
+      type: 'Coursework case analysis',
+      period: '2024',
+      description:
+        'A management accounting case study evaluating how a fashion retailer can use flexible budgeting, real-time feedback, and risk management during post-COVID online transformation.',
+      tags: ['Management accounting', 'Beyond budgeting', 'Retail strategy', 'Risk management'],
+    },
+    {
+      title: 'LEGO Digital Marketing and Contemporary Brand Responsibility',
+      type: 'Coursework analysis',
+      period: '2025',
+      description:
+        'A critical analysis of LEGO consumer engagement through AR retail experience, social media, user communities, AI-driven personalisation, sustainability marketing, ethical marketing, diversity, equity, and inclusion.',
+      tags: ['Digital marketing', 'Experiential retail', 'AI marketing', 'Sustainability', 'DEI'],
+    },
+  ],
 }
 
 export const seoData = {
