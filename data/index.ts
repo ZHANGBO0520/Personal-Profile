@@ -13,20 +13,20 @@ export const footerData = {
 }
 
 export const homePage = {
-  title: 'Welcome To My Blog Site',
+  title: 'Zhangbo Yin',
   description:
-    '保持热爱',
+    'A marketing-focused profile presenting my academic research, consumer insight projects, digital marketing experience, and selected writing across sustainable business and brand strategy.',
 }
 
 export const blogsPage = {
-  title: 'All Blogs',
-  description: '学习记录',
+  title: 'Writing',
+  description: 'Selected notes, reflections, and learning records',
 }
 
 export const categoryPage = {
   title: 'Categories',
   description:
-    'Blow this category is generated from all the tags are mentioned in the different blog post',
+    'Browse writing and records by topic.',
 }
 
 export const aboutPage = {
