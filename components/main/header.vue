@@ -31,6 +31,11 @@ function isActive(path: string) {
             分类
           </NuxtLink>
         </li>
+        <li>
+          <NuxtLink to="/academic" :class="{ underline: isActive('/academic') }">
+            学术
+          </NuxtLink>
+        </li>
         <li title="About Me">
           <NuxtLink
             to="/about"
