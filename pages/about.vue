@@ -2,7 +2,7 @@
 import { aboutPage, footerData, navbarData, socialLinks } from '~/data'
 
 useHead({
-  title: 'About',
+  title: 'Me',
   meta: [
     {
       name: 'description',
@@ -12,71 +12,137 @@ useHead({
 })
 
 defineOgImageComponent('About', {
-  headline: 'Greetings 👋',
+  headline: 'Profile',
   title: navbarData.homeTitle,
-  description: 'Dive into web development with me and learn Js, Ts, Vue, Nuxt, Docker, k8s',
+  description: aboutPage.description,
   link: '/liu.png',
 })
 </script>
 
 <template>
-  <div class="py-5">
-    <div class="sm:grid grid-cols-8 px-6 py-5 sm:py-9 gap-5 container max-w-5xl mx-auto">
-      <div class="col-span-5 max-w-md">
-        <div class="flex justify-between">
-          <div>
-            <h1 class="text-xl sm:text-4xl pb-2 font-bold">
-              {{ aboutPage.title }}
-            </h1>
-
-            <div class="my-3 space-x-2 md:space-x-3 pb-10">
-              <NuxtLink
-                :to="socialLinks.githubLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="Github"
-              >
-                <Icon name="fa:github" size="1em" />
-              </NuxtLink>
-              <NuxtLink
-                :to="socialLinks.giteeLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="LinkedIn"
-              >
-                <Icon name="simple-icons:gitee" size="1em" />
-              </NuxtLink>
-              <NuxtLink
-                :to="socialLinks.twitterLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="Twitter"
-              >
-                <Icon name="fa:twitter-square" size="1em" />
-              </NuxtLink>
-              <NuxtLink
-                :to="socialLinks.stackoverflowLink"
-                target="_blank"
-                class="px-2 py-1 lg:px-3 lg:py-2 bg-gray-300 text-gray-800 rounded-md dark:bg-slate-700 dark:text-[#F1F2F4]"
-                aria-label="StackOverflow"
-              >
-                <Icon name="fa:stack-overflow" size="1em" />
-              </NuxtLink>
-            </div>
-          </div>
-          <div class="sm:hidden block col-span-3 pb-5 dark:text-[#F1F2F4]">
-            <NuxtImg src="/liu.png" width="125" height="115" quality="50" class="rounded-md" />
-          </div>
-        </div>
-        <h3 class="text-base sm:text-3xl font-semibold pb-7 sm:pb-12">
+  <main class="container max-w-5xl mx-auto px-6 py-8 text-zinc-600 dark:text-zinc-300">
+    <section class="grid gap-8 pb-10 md:grid-cols-[1fr_280px]">
+      <div>
+        <p class="text-sm font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
+          Me
+        </p>
+        <h1 class="mt-2 text-3xl font-bold text-zinc-800 dark:text-[#F1F2F4] sm:text-5xl">
+          {{ aboutPage.title }}
+        </h1>
+        <h2 class="mt-3 text-lg font-semibold text-zinc-700 dark:text-zinc-200 sm:text-2xl">
           {{ aboutPage.description }}
-        </h3>
+        </h2>
+        <p class="mt-5 max-w-3xl leading-loose">
+          {{ aboutPage.aboutMe }}
+        </p>
+      </div>
 
-        <p class="whitespace-pre-line leading-loose">&#128080{{ aboutPage.aboutMe }}</p>
+      <aside class="rounded-md bg-white p-5 shadow-sm dark:bg-slate-900">
+        <NuxtImg src="/liu.png" width="220" height="220" quality="60" class="mb-5 w-full rounded-md object-cover" />
+        <div class="grid gap-3">
+          <NuxtLink
+            :to="socialLinks.githubLink"
+            target="_blank"
+            class="rounded-md bg-zinc-100 px-3 py-2 text-sm font-semibold text-zinc-700 dark:bg-slate-800 dark:text-zinc-200"
+          >
+            GitHub
+          </NuxtLink>
+          <NuxtLink
+            :to="`mailto:${aboutPage.email}`"
+            class="rounded-md bg-zinc-800 px-3 py-2 text-sm font-semibold text-white dark:bg-[#F1F2F4] dark:text-slate-950"
+          >
+            {{ aboutPage.email }}
+          </NuxtLink>
+        </div>
+      </aside>
+    </section>
+
+    <section class="border-t border-zinc-300 py-10 dark:border-slate-700">
+      <h2 class="text-2xl font-bold text-zinc-800 dark:text-[#F1F2F4]">
+        Education
+      </h2>
+      <div class="mt-5 grid gap-4">
+        <article
+          v-for="item in aboutPage.education"
+          :key="item.school"
+          class="rounded-md bg-white p-5 shadow-sm dark:bg-slate-900"
+        >
+          <div class="flex flex-wrap justify-between gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <span>{{ item.degree }}</span>
+            <span>{{ item.period }}</span>
+          </div>
+          <h3 class="mt-2 text-lg font-semibold text-zinc-800 dark:text-[#F1F2F4]">
+            {{ item.school }}
+          </h3>
+          <p class="mt-3 leading-loose">
+            {{ item.details }}
+          </p>
+        </article>
       </div>
-      <div class="hidden sm:block col-span-3">
-        <NuxtImg src="/liu.png" width="450" height="500" quality="50" class="rounded-md" />
+    </section>
+
+    <section class="border-t border-zinc-300 py-10 dark:border-slate-700">
+      <h2 class="text-2xl font-bold text-zinc-800 dark:text-[#F1F2F4]">
+        Experience
+      </h2>
+      <div class="mt-5 grid gap-4">
+        <article
+          v-for="item in aboutPage.experience"
+          :key="item.company"
+          class="rounded-md bg-white p-5 shadow-sm dark:bg-slate-900"
+        >
+          <div class="flex flex-wrap justify-between gap-2 text-sm text-zinc-500 dark:text-zinc-400">
+            <span>{{ item.role }}</span>
+            <span>{{ item.period }}</span>
+          </div>
+          <h3 class="mt-2 text-lg font-semibold text-zinc-800 dark:text-[#F1F2F4]">
+            {{ item.company }}
+          </h3>
+          <ul class="mt-3 list-disc space-y-2 pl-5 leading-loose">
+            <li v-for="point in item.points" :key="point">
+              {{ point }}
+            </li>
+          </ul>
+        </article>
       </div>
-    </div>
-  </div>
+    </section>
+
+    <section class="border-t border-zinc-300 py-10 dark:border-slate-700">
+      <h2 class="text-2xl font-bold text-zinc-800 dark:text-[#F1F2F4]">
+        Projects
+      </h2>
+      <div class="mt-5 grid gap-4 sm:grid-cols-2">
+        <article
+          v-for="item in aboutPage.projects"
+          :key="item.title"
+          class="rounded-md bg-white p-5 shadow-sm dark:bg-slate-900"
+        >
+          <div class="text-sm text-zinc-500 dark:text-zinc-400">
+            {{ item.period }}
+          </div>
+          <h3 class="mt-2 text-lg font-semibold text-zinc-800 dark:text-[#F1F2F4]">
+            {{ item.title }}
+          </h3>
+          <p class="mt-3 leading-loose">
+            {{ item.description }}
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="border-t border-zinc-300 py-10 dark:border-slate-700">
+      <h2 class="text-2xl font-bold text-zinc-800 dark:text-[#F1F2F4]">
+        Skills
+      </h2>
+      <div class="mt-5 flex flex-wrap gap-2">
+        <span
+          v-for="skill in aboutPage.skills"
+          :key="skill"
+          class="rounded-md bg-white px-3 py-2 text-sm font-semibold text-zinc-700 shadow-sm dark:bg-slate-900 dark:text-zinc-200"
+        >
+          {{ skill }}
+        </span>
+      </div>
+    </section>
+  </main>
 </template>
