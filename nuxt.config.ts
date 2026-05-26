@@ -54,7 +54,15 @@ export default defineNuxtConfig({
   nitro: {
     prerender: {
       crawlLinks: true,
-      routes: ['/', '/rss.xml'],
+      routes: [
+        '/',
+        '/rss.xml',
+        '/academic',
+        '/academic/visual-green-labels',
+        '/academic/lego-digital-marketing',
+        '/academic/lego-digital-transformation',
+        '/academic/shop-thursdays-beyond-budgeting',
+      ],
     },
   },
 
